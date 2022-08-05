@@ -98,7 +98,7 @@ const MainView = (props) => {
 
           <TagFilterTab tag={props.tag} />
 
-          <TitleFilterTab title={props.title}/>
+          <TitleFilterTab title={props.title} />
         </ul>
       </div>
 
