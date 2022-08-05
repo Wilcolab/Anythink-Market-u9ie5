@@ -3,6 +3,8 @@ import logo from "../../imgs/logo.png";
 import agent from "../../agent";
 
 const Banner = (props) => {
+  const [searchVisible, setSearchVisible] = React.useState(false);
+
   const searchChangeHandler = (e) => {
     const title = e.target.value || "";
 
@@ -23,18 +25,26 @@ const Banner = (props) => {
         <img src={logo} alt="banner" />
         <div className={"d-flex align-items-center justify-content-center"}>
           <span id="get-part" className="p-2">
-            A place to get
+            A place to{" "}
+            <button
+              style={{ all: "unset" }}
+              onClick={() => setSearchVisible(true)}
+            >
+              get
+            </button>
           </span>
-          <span className={"pr-3 d-flex align-items-center bg-white rounded"}>
-            <input
-              id="search-box"
-              className="form-control border-0"
-              type="text"
-              placeholder="What is it that you truly desire?"
-              onChange={searchChangeHandler}
-            />
-            <i className="ion-search text-muted"></i>
-          </span>
+          {searchVisible && (
+            <span className={"pr-3 d-flex align-items-center bg-white rounded"}>
+              <input
+                id="search-box"
+                className="form-control border-0"
+                type="text"
+                placeholder="What is it that you truly desire?"
+                onChange={searchChangeHandler}
+              />
+              <i className="ion-search text-muted"></i>
+            </span>
+          )}
           <span className={"p-2"}> the cool stuff.</span>
         </div>
       </div>
