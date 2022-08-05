@@ -24,9 +24,10 @@ const Banner = (props) => {
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div className={"d-flex align-items-center justify-content-center"}>
-          <span id="get-part" className="p-2">
+          <span className="p-2">
             A place to{" "}
             <button
+              id="get-part"
               style={{ all: "unset" }}
               onClick={() => setSearchVisible(true)}
             >
