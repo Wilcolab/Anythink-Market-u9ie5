@@ -7,6 +7,23 @@ const ItemList = (props) => {
     return <div className="py-4">Loading...</div>;
   }
 
+  if (props.title && props.title.length > 0 && props.items.length === 0) {
+    const message = <>No items found for {'"'}<strong>{props.title}</strong>{'"'}</>;
+    
+    return <div className="py-4 d-flex justify-content-center">
+      <div 
+      className="rounded"
+      style={{
+        maxWidth: '50rem',
+        padding: '4rem',
+        backgroundColor: 'rgba(255,255,255,0.1)',
+      }}>
+        <div className="text-center"><i className="bi bi-emoji-frown-fill" style={{fontSize: '2rem'}}></i></div>
+        {message}
+      </div>
+    </div>;
+  }
+
   if (props.items.length === 0) {
     return <div className="py-4 no-items">No items are here... yet.</div>;
   }
