@@ -17,7 +17,7 @@ const ItemList = (props) => {
     );
 
     return (
-      <div className="py-4 d-flex justify-content-center">
+      <div id="empty" className="py-4 d-flex justify-content-center">
         <div
           className="rounded"
           style={{
