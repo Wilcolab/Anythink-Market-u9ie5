@@ -58,6 +58,20 @@ const TagFilterTab = (props) => {
   );
 };
 
+const TitleFilterTab = (props) => {
+  if (!props.title) {
+    return null;
+  }
+
+  return (
+    <li className="nav-item">
+      <button type="button" className="nav-link active">
+        Title: {props.title}
+      </button>
+    </li>
+  );
+};
+
 const mapStateToProps = (state) => ({
   ...state.itemList,
   tags: state.home.tags,
@@ -83,6 +97,8 @@ const MainView = (props) => {
           <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
 
           <TagFilterTab tag={props.tag} />
+
+          <TitleFilterTab title={props.title} />
         </ul>
       </div>
 
