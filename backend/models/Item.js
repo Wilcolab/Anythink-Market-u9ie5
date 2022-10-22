@@ -55,7 +55,7 @@ ItemSchema.methods.toJSONFor = function(user) {
     tagList: this.tagList,
     favorited: user ? user.isFavorite(this._id) : false,
     favoritesCount: this.favoritesCount,
-    seller: this.seller.toProfileJSONFor(user)
+    seller: this.seller?.toProfileJSONFor(user) || {}
   };
 };
 
